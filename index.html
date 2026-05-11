@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shruti Subash — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --bg-alt: #ebe6dd;
+    --ink: #18130d;
+    --ink-soft: #4b4338;
+    --line: rgba(24,19,13,0.18);
+    --accent: #8a6a3a;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.55; }
+  img { display: block; width: 100%; height: auto; transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1); }
+  a { color: inherit; text-decoration: none; }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 36px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background: rgba(244,241,236,0.7); border-bottom: 1px solid var(--line);
+  }
+  .nav .brand { font-family: var(--serif); font-size: 24px; letter-spacing: 0.02em; }
+  .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; }
+  .nav ul li a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    position: relative; height: 100vh; display: flex; align-items: flex-end; padding: 0 36px 100px;
+    background: #000 url("images/skyscapes/05-purple-city-sunset.jpeg") center/cover no-repeat;
+  }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 40%); }
+  .hero-inner { position: relative; z-index: 10; color: #fff; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(60px, 12vw, 160px); line-height: 0.85; margin: 0; font-weight: 300; }
+  .hero h1 em { font-style: italic; }
+
+  /* Section Styles */
+  section.block { padding: 120px 36px; }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-bottom: 20px; margin-bottom: 60px; border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 { font-family: var(--serif); font-size: 56px; font-weight: 300; margin: 0; line-height: 1; }
+  .section-head .num { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--accent); margin-right: 15px; }
+
+  /* MASONRY GRID - CRITICAL FOR FULL RATIO */
+  .masonry {
+    column-count: 3;
+    column-gap: 30px;
+  }
+  .masonry figure {
+    break-inside: avoid;
+    margin: 0 0 30px;
+    background: var(--bg-alt);
+    position: relative;
+    overflow: hidden;
+  }
+  .masonry figure:hover img { transform: scale(1.03); }
+  .masonry figcaption {
+    padding: 12px 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft);
+  }
+
+  @media (max-width: 1000px) { .masonry { column-count: 2; } }
+  @media (max-width: 600px) { .masonry { column-count: 1; } .nav ul { display: none; } }
+
+  /* About */
+  .about { padding: 120px 36px; background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about h3 { font-family: var(--serif); font-size: 64px; font-weight: 300; margin: 0 0 20px; }
+  
+  footer { padding: 60px 36px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="#">Shruti Subash</a>
+  <ul>
+    <li><a href="#skyscapes">Skyscapes</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#landscapes">Landscapes</a></li>
+    <li><a href="#companions">Companions</a></li>
+    <li><a href="#moments">Moments</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Shruti<br/><em>Subash</em></h1>
+    <p>Photography Portfolio 2026</p>
+  </div>
+</header>
+
+<!-- SKYSCAPES (13 IMAGES) -->
+<section id="skyscapes" class="block reveal">
+  <div class="section-head">
+    <div><span class="num">01</span><h2>Skyscapes</h2></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="images/skyscapes/01-purple-sunset-building.jpeg"><figcaption>City Glow</figcaption></figure>
+    <figure><img src="images/skyscapes/02-pink-sunset-buildings.jpeg"><figcaption>Pastel Hour</figcaption></figure>
+    <figure><img src="images/skyscapes/03-tree-silhouette-orange.jpeg"><figcaption>Fire in the Branches</figcaption></figure>
+    <figure><img src="images/skyscapes/04-sun-rays-clouds.jpeg"><figcaption>Crepuscular</figcaption></figure>
+    <figure><img src="images/skyscapes/05-purple-city-sunset.jpeg"><figcaption>Twilight</figcaption></figure>
+    <figure><img src="images/skyscapes/06-gradient-sunset-water.jpeg"><figcaption>The Fade</figcaption></figure>
+    <figure><img src="images/skyscapes/07-moon-dark-sky.jpeg"><figcaption>Full Moon</figcaption></figure>
+    <figure><img src="images/skyscapes/08-tree-moon-twilight.jpeg"><figcaption>Crescent</figcaption></figure>
+    <figure><img src="images/skyscapes/09-rainbow-city.jpeg"><figcaption>After the Rain</figcaption></figure>
+    <figure><img src="images/skyscapes/10-milky-way-trees.jpeg"><figcaption>Milky Way</figcaption></figure>
+    <figure><img src="images/skyscapes/11-stars-pine-trees.jpeg"><figcaption>Night Pines</figcaption></figure>
+    <figure><img src="images/skyscapes/12-stars-church-night.jpeg"><figcaption>Chapel Under Stars</figcaption></figure>
+    <figure><img src="images/skyscapes/13-galaxy-deep-sky.jpeg"><figcaption>Deep Field</figcaption></figure>
+  </div>
+</section>
+
+<!-- ARCHITECTURE (8 IMAGES) -->
+<section id="architecture" class="block reveal">
+  <div class="section-head">
+    <div><span class="num">02</span><h2>Architecture</h2></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="images/architecture/01-glass-greenhouse.jpeg"><figcaption>Greenhouse</figcaption></figure>
+    <figure><img src="images/architecture/02-stone-church-ruin.jpeg"><figcaption>Ruin</figcaption></figure>
+    <figure><img src="images/architecture/03-temple-birds.jpeg"><figcaption>Flight</figcaption></figure>
+    <figure><img src="images/architecture/04-kerala-temple.jpeg"><figcaption>Kerala Temple</figcaption></figure>
+    <figure><img src="images/architecture/05-sculpture-reflection.jpeg"><figcaption>Reflection</figcaption></figure>
+    <figure><img src="images/architecture/06-modern-office-tower.jpeg"><figcaption>Edges</figcaption></figure>
+    <figure><img src="images/architecture/07-cantilever-sunset.jpeg"><figcaption>Cantilever</figcaption></figure>
+    <figure><img src="images/architecture/08-glass-cube 2.jpeg"><figcaption>Lattice</figcaption></figure>
+  </div>
+</section>
+
+<!-- LANDSCAPES (4 IMAGES) -->
+<section id="landscapes" class="block reveal">
+  <div class="section-head">
+    <div><span class="num">03</span><h2>Landscapes</h2></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="images/landscapes/01-observatory-mountains.jpeg"><figcaption>Observatory</figcaption></figure>
+    <figure><img src="images/landscapes/02-lake-mountains-framed.jpeg"><figcaption>Framed Alps</figcaption></figure>
+    <figure><img src="images/landscapes/03-sparkling-sea.jpeg"><figcaption>Sequins</figcaption></figure>
+    <figure><img src="images/landscapes/04-turquoise-river.jpeg"><figcaption>Glacier Run</figcaption></figure>
+  </div>
+</section>
+
+<!-- COMPANIONS (7 IMAGES) -->
+<section id="companions" class="block reveal">
+  <div class="section-head">
+    <div><span class="num">04</span><h2>Companions</h2></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="images/companions/01-dog-sand-curl.jpeg"><figcaption>Asleep</figcaption></figure>
+    <figure><img src="images/companions/02-cat-stairs-backlit.jpeg"><figcaption>Stairwell</figcaption></figure>
+    <figure><img src="images/companions/03-cat-portrait-golden.jpeg"><figcaption>Golden Hour</figcaption></figure>
+    <figure><img src="images/companions/04-cat-railing.jpeg"><figcaption>Sun Bath</figcaption></figure>
+    <figure><img src="images/companions/05-ragdoll-cat.jpeg"><figcaption>Blue Eyes</figcaption></figure>
+    <figure><img src="images/companions/06-samoyed-smile.jpeg"><figcaption>Smile</figcaption></figure>
+    <figure><img src="images/companions/07-bird.jpeg"><figcaption>The Visitor</figcaption></figure>
+  </div>
+</section>
+
+<!-- MOMENTS (7 IMAGES) -->
+<section id="moments" class="block reveal">
+  <div class="section-head">
+    <div><span class="num">05</span><h2>Moments</h2></div>
+  </div>
+  <div class="masonry">
+    <figure><img src="images/moments/01-umbrella-street.jpeg"><figcaption>Umbrellas</figcaption></figure>
+    <figure><img src="images/moments/02-dinner-sunset-view.jpeg"><figcaption>Dinner</figcaption></figure>
+    <figure><img src="images/moments/03-sandwich-coffee.jpeg"><figcaption>Morning Toast</figcaption></figure>
+    <figure><img src="images/moments/04-purple-lily-bud.jpeg"><figcaption>Becoming</figcaption></figure>
+    <figure><img src="images/moments/05-purple-lily-open.jpeg"><figcaption>Open</figcaption></figure>
+    <figure><img src="images/moments/06-breakfast-bowls-view.jpeg"><figcaption>Sunday</figcaption></figure>
+    <figure><img src="images/moments/07-bubble-parade.jpeg"><figcaption>Parade</figcaption></figure>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Shruti Subash</span>
+  <span>New Zealand / India</span>
+  <span>All Rights Reserved</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
